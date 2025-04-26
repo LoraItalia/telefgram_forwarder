@@ -7,15 +7,12 @@ import os
 import json
 from dotenv import load_dotenv
 
-# Carica .env
 load_dotenv("/opt/telegram_forwarder/.env")
 
-# Configurazione Telegram
 BOT_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 TELEGRAM_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
-# Funzione per inviare un messaggio a Telegram
 def send_telegram_message(text):
     payload = {
         "chat_id": CHAT_ID,
@@ -32,14 +29,12 @@ def send_telegram_message(text):
     except Exception as e:
         print(f"Eccezione invio Telegram: {e}")
 
-# Funzione per recuperare le info di un nodo
 def get_node_info(nodeID, interface):
     if nodeID in interface.nodes:
         return interface.nodes[nodeID]
     else:
         return None
-
-# Funzione chiamata alla ricezione di un pacchetto
+        
 def onReceive(packet, interface):
     try:
         if 'decoded' in packet and 'text' in packet['decoded']:
@@ -60,12 +55,11 @@ def onReceive(packet, interface):
             print("Pacchetto ricevuto, ma nessun testo trovato.")
     except Exception as e:
         print(f"Errore elaborazione pacchetto: {e}")
-
-# Funzione chiamata alla connessione
+        
 def onConnection(interface, topic=pub.AUTO_TOPIC):
     print("Connesso alla radio Meshtastic.")
 
-# Funzione principale che gestisce connessione/riallacciamento
+# Main Loop for connection and auto reconnet management
 def start_interface_loop():
     while True:
         try:
@@ -75,7 +69,6 @@ def start_interface_loop():
             pub.subscribe(onReceive, "meshtastic.receive")
             pub.subscribe(onConnection, "meshtastic.connection.established")
 
-            # Loop di vita della connessione
             while True:
                 time.sleep(1)
                 if interface.stream.closed:
