@@ -1,0 +1,25 @@
+# Ignora l'ambiente virtuale
+venv/
+
+# Ignora il file di configurazione con dati sensibili
+.env
+
+# File di log eventuali
+*.log
+
+# File temporanei di sistema
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# File Python compilati
+__pycache__/
+*.pyc
+*.pyo
+
+# Backup editor
+*~
+
+# Systemd service se generato dinamicamente (opzionale)
+telegram_forwarder.service
