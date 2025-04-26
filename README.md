@@ -81,7 +81,6 @@ Durante l'installazione ti verranno richiesti:
 - Il **Token** del bot Telegram
 - Il **Chat ID** del destinatario
 - La **porta seriale** del dispositivo Meshtastic (es. `/dev/ttyUSB0`)
-- Il **baudrate** di comunicazione (default: 921600)
 
 🔐 Le impostazioni verranno salvate automaticamente nel file `.env` dentro `/opt/telegram_forwarder/`.
 
