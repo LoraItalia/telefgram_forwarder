@@ -37,7 +37,6 @@ install() {
     TELEGRAM_TOKEN=$(ask "Inserisci il TOKEN del bot Telegram")
     CHAT_ID=$(ask "Inserisci il CHAT ID a cui inviare i messaggi")
     SERIAL_PORT=$(ask "Inserisci la porta seriale" "/dev/ttyUSB0")
-    BAUD_RATE=$(ask "Inserisci il baudrate" "921600")
 
     echo "📁 Creazione directory $INSTALL_DIR..."
     mkdir -p "$INSTALL_DIR"
@@ -51,7 +50,6 @@ install() {
 TELEGRAM_TOKEN=$TELEGRAM_TOKEN
 TELEGRAM_CHAT_ID=$CHAT_ID
 SERIAL_PORT=$SERIAL_PORT
-BAUD_RATE=$BAUD_RATE
 EOF
 
     # Verifica se python3-venv è installato
