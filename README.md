@@ -10,26 +10,26 @@ Per installare **Telegram Forwarder**:
 
 1. 📥 Scarica lo script di installazione:
     ```bash
-    wget https://raw.githubusercontent.com/LoraItalia/telegram_forwarder/main/setup.sh
+    wget https://raw.githubusercontent.com/LoraItalia/telegram_forwarder/refs/heads/main/lit-lit-setup.sh
     ```
 
 2. 🔒 Rendi eseguibile il file scaricato:
     ```bash
-    chmod +x setup.sh
+    chmod +x lit-lit-setup.sh
     ```
 
 3. 🚀 Avvia l'installazione come root:
     ```bash
-    sudo ./setup.sh install
+    sudo ./lit-lit-setup.sh install
     ```
 
 ⚙️ Lo script ti guiderà nella configurazione dei parametri necessari (TOKEN del bot Telegram, chat ID, porta seriale, ecc.) e installerà automaticamente il servizio systemd.
 
 ---
 
-## 🛠 Funzionalità di `setup.sh`
+## 🛠 Funzionalità di `lit-setup.sh`
 
-Lo script `setup.sh` supporta tre modalità operative:
+Lo script `lit-lit-setup.sh` supporta tre modalità operative:
 
 | Comando                  | Descrizione                                              |
 |---------------------------|----------------------------------------------------------|
@@ -39,9 +39,9 @@ Lo script `setup.sh` supporta tre modalità operative:
 
 ### Esempi:
 ```bash
-sudo ./setup.sh install
-sudo ./setup.sh upgrade
-sudo ./setup.sh remove
+sudo ./lit-setup.sh install
+sudo ./lit-setup.sh upgrade
+sudo ./lit-setup.sh remove
 ```
 
 ---
